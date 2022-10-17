@@ -26,7 +26,7 @@ if __name__ == "__main__":
         exit()
 
     with open(mealplan_path) as mealplan_csv:
-        csv_reader = csv.reader(mealplan_csv, delimiter=',')
+        csv_reader = csv.reader(mealplan_csv, delimiter=',', skipinitialspace=True)
         line_count = 0
         for row in csv_reader:
             if line_count == 0:
