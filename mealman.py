@@ -31,6 +31,7 @@ if __name__ == "__main__":
         for row in csv_reader:
             if line_count == 0:
                 max_calories = extract_calories(row)
+                line_count += 1
             else:
                 print(row)
     
