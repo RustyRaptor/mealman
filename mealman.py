@@ -3,9 +3,18 @@
 import sys
 from pathlib import Path
 import csv
+from datetime import datetime
 
 def extract_calories(first_row):
-    pass
+    if first_row[0] != "zigzag":
+        return int(first_row[0])
+    dt = datetime.now()
+    zigzag_days = first_row[1:]
+
+    return zigzag_days[dt.weekday()]
+
+
+
 
 if __name__ == "__main__":
     max_calories = 0
@@ -17,15 +26,13 @@ if __name__ == "__main__":
         exit()
 
     with open(mealplan_path) as mealplan_csv:
-        csv_reader = csv.reader(mealplan_csv, delimiter=', ')
+        csv_reader = csv.reader(mealplan_csv, delimiter=',')
         line_count = 0
         for row in csv_reader:
             if line_count == 0:
                 max_calories = extract_calories(row)
             else:
-                print(f'\t{row[0]} works in the {row[1]} department, and was born in {row[2]}.')
-                line_count += 1
-        print(f'Processed {line_count} lines.')
+                print(row)
     
     
 
