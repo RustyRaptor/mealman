@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # Ignore meal plans folder so we don't commit every change to my personal meal plan
-mealplans/*
+/mealplans/*
