@@ -44,5 +44,3 @@ if __name__ == "__main__":
                 calories_in_plan += int(row[1]) * calorie_dict[row[0]]
     print("Calories:", calories_in_plan)
     print("Excess calories: ", calories_in_plan - max_calories)
-
-
