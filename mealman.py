@@ -41,6 +41,7 @@ if __name__ == "__main__":
                 max_calories = extract_calories(row)
                 line_count += 1
             else:
-                calories_in_plan += int(row[1]) * calorie_dict[row[0]]
+                if "#" not in row[0]:
+                    calories_in_plan += int(row[1]) * calorie_dict[row[0]]
     print("Calories:", calories_in_plan)
     print("Excess calories: ", calories_in_plan - max_calories)
