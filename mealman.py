@@ -38,10 +38,14 @@ if __name__ == "__main__":
         line_count = 0
         for row in csv_reader:
             if line_count == 0:
+                if len(row) not in (1, 8):
+                    print("Your calories line does not meet the correct format.")
+                    exit()
                 max_calories = extract_calories(row)
                 line_count += 1
             else:
                 if "#" not in row[0]:
                     calories_in_plan += int(row[1]) * calorie_dict[row[0]]
-    print("Calories:", calories_in_plan)
+    print("Calories Allowed Today:", max_calories)
+    print("Calories In Plan:", calories_in_plan)
     print("Excess calories: ", calories_in_plan - max_calories)
