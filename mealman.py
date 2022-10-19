@@ -20,8 +20,10 @@ if __name__ == "__main__":
     calorie_dict = {}
     max_calories = 0
     calories_in_plan = 0
-
-    mealplan_path = Path(sys.argv[1])
+    try:
+        mealplan_path = Path(sys.argv[1])
+    except:
+        print("Something is wrong with your arguments try again")
 
     if not mealplan_path.is_file():
         print("Incorrect file path", sys.argv[1])
