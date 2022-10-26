@@ -10,3 +10,8 @@ This simple tool has the minimum features that I need and just helps me automate
 - Meal plan files
 - Custom list of calorie amounts per serving.
 - Shows total calories consumed so far and calories remaining
+
+## Usage
+```bash
+python3 mealman.py <input mealplan file>
+```
