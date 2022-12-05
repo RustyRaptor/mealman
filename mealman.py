@@ -48,6 +48,8 @@ if __name__ == "__main__":
             else:
                 if "#" not in row[0]:
                     calories_in_plan += int(row[1]) * calorie_dict[row[0]]
+    
     print("Calories Allowed Today:", int(max_calories))
     print("Calories In Plan:", int(calories_in_plan))
     print("Excess calories: ", int(calories_in_plan - max_calories))
+    print("Percentage of calories in plan:", int(calories_in_plan / max_calories * 100))
