@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 import csv
 from datetime import datetime
+from tqdm import tqdm
 
 def extract_calories(first_row):
     if first_row[0] != "zigzag":
@@ -52,4 +53,9 @@ if __name__ == "__main__":
     print("Calories Allowed Today:", int(max_calories))
     print("Calories In Plan:", int(calories_in_plan))
     print("Excess calories: ", int(calories_in_plan - max_calories))
-    print("Percentage of calories in plan:", int(calories_in_plan / max_calories * 100))
+    with tqdm(total=100,
+              desc="Percent of Calories",
+              leave=True,
+              ncols=80,
+              bar_format='{l_bar}{bar}|',) as pbar:
+        pbar.update(int(calories_in_plan / max_calories * 100))
