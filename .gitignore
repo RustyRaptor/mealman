@@ -131,3 +131,4 @@ dmypy.json
 # Ignore meal plans folder so we don't commit every change to my personal meal plan
 /mealplans
 /mealplans/*.csv
+.vscode/settings.json
