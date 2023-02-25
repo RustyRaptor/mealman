@@ -1,5 +1,4 @@
 import sys
-import csv
 import subprocess
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QMessageBox, QFileDialog, QProgressBar, QTableWidget, QTableWidgetItem
 import subprocess
